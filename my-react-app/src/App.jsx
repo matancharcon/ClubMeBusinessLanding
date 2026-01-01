@@ -13,16 +13,19 @@ export default function App() {
 
       {/* HERO */}
       <section className="hero">
-        <h1>
-          יותר לקוחות חוזרים<br />
-          בלי כאב ראש
-        </h1>
 
-        <p className="hero-sub">
-          ClubMe מחזירה לקוחות לעסק שלך —<br />
-          בלי כרטיסיות, בלי מערכות מסובכות, ובלי התעסקות יומיומית
+        <p className="hero-tagline">
+          מועדון לקוחות דיגיטלי לעסקים
         </p>
-
+        <h1>
+          הופכים ביקור חד־פעמי<br />
+          להרגל קבוע
+        </h1>
+        <p className="hero-sub">
+          ClubMe מנהלת עבורך הטבות דיגיטליות
+          בלי כרטיסיות ובלי מערכות מסובכות,<br />
+          כדי שאתה שתוכל לנהל את העסק בראש שקט.
+        </p>
         <a href="#screens" className="cta-button">
           תראה איך זה נראה בפועל
         </a>
