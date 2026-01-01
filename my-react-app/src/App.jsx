@@ -7,6 +7,7 @@ const SCREENS = {
 import { useState } from "react";
 export default function App() {
   const [submitted, setSubmitted] = useState(false);
+  const [activeImage, setActiveImage] = useState(null);
   return (
     <div className="page">
 
@@ -77,12 +78,13 @@ export default function App() {
               <img
                 src={SCREENS.home}
                 alt="מסך הבית ללקוח"
-                className="screen-image"
+                className="screen-image clickable"
+                onClick={() => setActiveImage(SCREENS.home)}
               />
             </div>
             <p>
-              הלקוח רואה את כל ההטבות במקום אחד.<br />
-              זה מזכיר לו לחזור אליך.
+              הלקוח רואה את כל מועדוני הלקוחות שלו במקום אחד.
+              זה מזכיר לו לחזור אליך
             </p>
           </div>
 
@@ -92,7 +94,8 @@ export default function App() {
              <img
                 src={SCREENS.business}
                 alt="מסך העסק ללקוח"
-                className="screen-image"
+                className="screen-image clickable"
+                onClick={() => setActiveImage(SCREENS.business)}
               />
               </div>
             <p>
@@ -107,7 +110,8 @@ export default function App() {
              <img
                 src={SCREENS.redeem}
                 alt="מסך מימוש הטבה"
-                className="screen-image"
+                className="screen-image clickable"
+                onClick={() => setActiveImage(SCREENS.redeem)}
               />
               </div>
             <p>
@@ -177,6 +181,14 @@ export default function App() {
         clubMe © {new Date().getFullYear()}
       </footer>
 
+      {activeImage && (
+        <div
+          className="image-overlay"
+          onClick={() => setActiveImage(null)}
+        >
+          <img src={activeImage} alt="תצוגה מוגדלת" />
+        </div>
+      )}
     </div>
   );
 }

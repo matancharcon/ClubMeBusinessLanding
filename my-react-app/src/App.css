@@ -32,11 +32,13 @@ html, body, #root {
   color: white;
   text-align: center;
   padding: 4.5rem 1rem 4rem;
+  min-height: 60vh;
 }
 
 .hero h1 {
+  margin-top: 3em;
   font-size: clamp(1.9rem, 5vw, 2.6rem);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-weight: 700;
 }
 
@@ -48,6 +50,7 @@ html, body, #root {
 }
 
 .cta-button {
+  margin-top: 5rem;
   background: white;
   color: #5b2dbd;
   padding: 0.75rem 2.2rem;
@@ -154,6 +157,39 @@ html, body, #root {
   border-radius: 20px; /* רק ריכוך קל */
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
+.screen-image.clickable {
+  cursor: zoom-in;
+}
+
+.image-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.image-overlay img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  animation: zoomIn 0.2s ease-out;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 
 
 
